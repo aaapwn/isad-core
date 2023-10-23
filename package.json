@@ -9,7 +9,8 @@
     "db:migrate": "prisma migrate dev && npm run db:generate",
     "db:generate": "npx prisma generate",
     "db:studio": "npx prisma studio",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "start": "nodemon server.ts"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,13 @@
     "firebase-admin": "^11.11.0",
     "firebase-function": "^1.4.73",
     "firebase-functions": "^4.4.1",
-    "nodemon": "^3.0.1"
-  }
+    "nodemon": "^3.0.1",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5"
+  },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+]
 }

@@ -1,15 +1,16 @@
 {
-    "version": 2.0,
+    "version": 2,
     "builds": [
         {
-            "src": "/(.*)",
-            "use": "@now/node"
+            "src": "dist/index.js",
+            "use": "@vercel/node",
+            "config": { "includeFiles": ["dist/**"] }
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server.js"
+            "dest": "dist/index.js"
         }
     ]
 }
