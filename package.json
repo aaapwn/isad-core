@@ -2,7 +2,7 @@
   "name": "core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.ts",
@@ -10,7 +10,8 @@
     "db:generate": "npx prisma generate",
     "db:studio": "npx prisma studio",
     "build": "tsc -p .",
-    "start": "nodemon server.ts"
+    "deploy": "firebase deploy --only functions",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -38,5 +39,8 @@
     "ts.check",
     "build",
     "add-build"
-]
+  ],
+  "engines": {
+    "node": "18"
+  }
 }
