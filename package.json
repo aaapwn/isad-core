@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.ts",
+    "dev": "nodemon src/server.ts",
     "db:migrate": "prisma migrate dev && npm run db:generate",
     "db:generate": "npx prisma generate",
     "db:studio": "npx prisma studio",

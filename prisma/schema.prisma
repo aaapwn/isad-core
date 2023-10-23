@@ -78,6 +78,7 @@ model Menu {
   price          Int
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
+  status         ReadyStatus  @default(AVAILABLE)
   menuCategoryId Int
   MenuCategory   MenuCategory @relation(fields: [menuCategoryId], references: [id], onDelete: Cascade)
   OrderItem      OrderItem[]
