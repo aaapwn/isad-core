@@ -43,13 +43,13 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, price, menuCategoryId } = req.body;
+        const { name, price, menuCategoryId, status } = req.body;
         const category = await prisma.menu.update({
             where: {
                 id: Number(id)
             },
             data: {
-                name, price, menuCategoryId
+                name, price, menuCategoryId, status
             }
         })
         res.status(200).json({

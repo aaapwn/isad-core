@@ -33,6 +33,7 @@ model Customer {
   createdAt DateTime       @default(now())
   updatedAt DateTime       @updatedAt
   Table     Table?
+  OrderBill OrderBill[]
 }
 
 model Table {
@@ -49,7 +50,8 @@ model OrderBill {
   status     OrderStatus @default(WAITING)
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
-  customerId Int         
+  customerId Int
+  customer   Customer    @relation(fields: [customerId], references: [id], onDelete: Cascade)
   OrderItem  OrderItem[]
 }
 

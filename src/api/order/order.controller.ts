@@ -48,6 +48,7 @@ router.get('/w-customer/:customer_id', async (req, res) => {
             },
             include: {
                 OrderItem: true
+                
             }
         })
         res.status(200).json(customer);
